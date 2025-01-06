@@ -12,7 +12,10 @@ pipeline{
         }
         stage("code"){
             steps{
-                git url: "https://github.com/kuldeepmindpath07/shared-variables.git", branch: "kuldeep"
+                script{
+                
+                    clone("https://github.com/kuldeepmindpath07/shared-variables.git", "kuldeep")
+                }
             }
         }
         stage("deploy"){
