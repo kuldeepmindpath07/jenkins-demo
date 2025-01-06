@@ -20,7 +20,7 @@ pipeline{
         stage("deploy"){
             steps{
                 echo "this is deploying the code"
-                sh "docker stop db_cont"
+                sh "docker-compose up --remove-orphans"
                 sh "docker-compose down && docker-compose up -d"    
             }
         }
